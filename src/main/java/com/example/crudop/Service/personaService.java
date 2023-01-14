@@ -13,7 +13,7 @@ public class personaService {
     @Autowired
 private personaRepo personaR;
     @GetMapping //permette di avere una risposta in http format
-    public Persona getPersona(Long id) {
-         return personaR.getReferenceById(id);
+    public Persona letPersona(Long id) {
+         return personaR.getById(id);
     }
 }

@@ -16,7 +16,7 @@ public class controllerPersona {
 @GetMapping("/getPersona/{id}")
     public Persona getPersona(@PathVariable("id") Long id){
     Persona p=new Persona();
-    p=personaS.getPersona(id);
+    p=personaS.letPersona(id);
     return p;
 }
 

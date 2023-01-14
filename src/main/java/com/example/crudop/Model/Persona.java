@@ -3,7 +3,7 @@ package com.example.crudop.Model;
 import jakarta.persistence.*;
 
 @Entity//decorator che indica che questa classe deve essere mappata in tabella SQL
-@Table(name = "Persona")
+@Table(name = "persona")
 public class Persona {
 
 

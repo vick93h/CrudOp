@@ -6,6 +6,17 @@ import jakarta.persistence.*;
 @Table(name = "persona")
 public class Persona {
 
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//indica che id deve essere autoincrement
+    private long Id;
+    private String Nome;
+    private String Cognome;
+    private String Email;
+    private String Sesso;
+
+    private String Avatar;
+
+    private String Mestiere;
 
     public Persona() {
 
@@ -76,16 +87,5 @@ public class Persona {
         Avatar = avatar;
         Mestiere = mestiere;
     }
-  @jakarta.persistence.Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)//indica che id deve essere autoincrement
-    private long Id;
-    private String Nome;
-    private String Cognome;
-    private String Email;
-    private String Sesso;
-
-    private String Avatar;
-
-    private String Mestiere;
 
 }

@@ -11,12 +11,25 @@ import java.util.List;
 @RequestMapping("/api")
 public class controllerPersona {
 @Autowired
-    private personaService personaS;
+private personaService personaS;
 @GetMapping("/getAllPersona")
     public @ResponseBody List<Persona> getPersona(){
 
     return personaS.findByAllPerson();
 
 }
+    @PostMapping("/insertPerson")
+    public void insertPersona(@RequestBody Persona p) {
+         personaService.insertPersona(p);
+    }
+    @DeleteMapping("/deletePerson/{id}")
+    public void deletePersona(@PathVariable("id") long id) {
+        personaService.deletePersona(id);
+    }
+    @PutMapping("/updatePerson")
+    public void updatePersona(@RequestBody Persona p, @PathVariable("id") long id) {
+        personaService.updatePersona(p, id);
+    }
+
 
 }

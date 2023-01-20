@@ -20,15 +20,15 @@ private personaService personaS;
 }
     @PostMapping("/insertPerson")
     public void insertPersona(@RequestBody Persona p) {
-         personaService.insertPersona(p);
+         personaS.insertPersona(p);
     }
     @DeleteMapping("/deletePerson/{id}")
     public void deletePersona(@PathVariable("id") long id) {
-        personaService.deletePersona(id);
+        personaS.deletePersona(id);
     }
-    @PutMapping("/updatePerson")
+    @PutMapping("/updatePerson/{id}")
     public void updatePersona(@RequestBody Persona p, @PathVariable("id") long id) {
-        personaService.updatePersona(p, id);
+        personaS.updatePersona(p, id);
     }
 
 

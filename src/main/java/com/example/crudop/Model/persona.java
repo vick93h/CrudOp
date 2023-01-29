@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity//decorator che indica che questa classe deve essere mappata in tabella SQL
 @Table(name = "persona")
-public class Persona {
+public class persona {
 
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//indica che id deve essere autoincrement
@@ -18,7 +18,7 @@ public class Persona {
 
     private String Mestiere;
 
-    public Persona() {
+    public persona() {
 
     }
 
@@ -78,7 +78,7 @@ public class Persona {
         Id = id;
     }
 
-    public Persona (long id, String nome, String cognome, String email, String sesso, String avatar, String mestiere) {
+    public persona (long id, String nome, String cognome, String email, String sesso, String avatar, String mestiere) {
         Id = id;
         Nome = nome;
         Cognome = cognome;

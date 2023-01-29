@@ -1,6 +1,6 @@
 package com.example.crudop.Service;
 
-import com.example.crudop.Model.Persona;
+import com.example.crudop.Model.persona;
 import com.example.crudop.Repository.personaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8080/")
 @Service
 public class personaService {
     @Autowired
@@ -16,7 +16,7 @@ private  personaRepo personaR;
 
 
     @PostMapping
-    public void insertPersona(Persona p) {
+    public void insertPersona(persona p) {
       personaR.save(p);
     }
 @DeleteMapping
@@ -24,8 +24,8 @@ private  personaRepo personaR;
     personaR.deleteById(id);
     }
 @PutMapping
-    public  void updatePersona(Persona p, long id) {
-    Persona p_appoggio=new Persona();
+    public  void updatePersona(persona p, long id) {
+    persona p_appoggio=new persona();
     p_appoggio=personaR.getReferenceById(id);
     p_appoggio.setNome(p.getNome());
     p_appoggio.setCognome(p.getCognome());
@@ -38,8 +38,11 @@ private  personaRepo personaR;
 
 
     @GetMapping //permette di avere una risposta in http format
-    public List<Persona> findByAllPerson() {
+    public List<persona> findByAllPerson() {
         return personaR.findByAllPerson();
     }
 
+    public persona findByPersonId(long id) {
+        return personaR.getPersonById(id);
+    }
 }
